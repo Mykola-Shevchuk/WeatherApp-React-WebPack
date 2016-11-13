@@ -4,6 +4,8 @@ var WeatherList = require('./WeatherList.jsx');
 
 require('./WeatherApp.css');
 
+
+
 var WeatherApp = React.createClass({
     getInitialState: function() {
         return {
@@ -13,17 +15,17 @@ var WeatherApp = React.createClass({
 
     componentDidMount: function() {
 
-      var form = document.querySelector('.city-editor');
-      var but = document.querySelector('.add-button');
+        var form = document.querySelector('.city-editor');
+        var but = document.querySelector('.add-button');
 
-      form.addEventListener("keypress", function(event) {
-          if (event.keyCode == 13) {
-              but.click();
-          }
-      });
-
+        form.addEventListener("keypress", function(event) {
+            if (event.keyCode == 13) {
+                but.click();
+            }
+        });
        
         var localCities = JSON.parse(localStorage.getItem('cities'));
+        
         if (localCities) {
             this.setState({ cities: localCities });
         }

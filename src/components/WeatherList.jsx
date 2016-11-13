@@ -9,19 +9,23 @@ var WeatherList = React.createClass({
         var onCityDelete = this.props.onCityDelete;
 
         return (
-            <div className="cities-list">
-                {
-                    this.props.cities.map(function(city){
-                        return (
-                            <Weather
-                                key={city.id}
-                                onDelete={onCityDelete.bind(null, city)}
-                                >
-                                {city.city}: {city.temp}
-                            </Weather>
-                        );
-                    })
-                }
+            <div>
+                <p className="error">Error: Our value is not correct!</p>
+                
+                <div className="cities-list">
+                    {
+                        this.props.cities.map(function(city){
+                            return (
+                                <Weather
+                                    key={city.id}
+                                    onDelete={onCityDelete.bind(null, city)}
+                                    >
+                                    {city.city}: {city.temp}
+                                </Weather>
+                            );
+                        })
+                    }
+                </div>
             </div>
         );
     }

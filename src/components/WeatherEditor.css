@@ -57,3 +57,10 @@
 .add-button:focus {
     outline: 0;
 }
+
+.error {
+    text-align: center;
+    color: #af2b2b;
+    font: bold 18px Arial;
+    display: none;
+}

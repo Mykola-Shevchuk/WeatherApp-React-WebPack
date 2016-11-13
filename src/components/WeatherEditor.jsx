@@ -17,26 +17,37 @@ var WeatherEditor = React.createClass({
 
     var self = this;
     var api = 'http://api.openweathermap.org/data/2.5/weather?q=' 
-              + self.state.temp +'&=ru&units=metric&APPID=98c355d73f22c6eb33c4bc0bd22031fe'
+              + self.state.temp +'&=ru&units=metric&APPID=98c355d73f22c6eb33c4bc0bd22031fe';
 
-     axios.get(api)
-      .then(function (result) {
+    var formBlock = document.querySelector('.city-editor');
+    var errorBlock = document.querySelector('.error');
 
-            self.setState({
-              temp: Math.ceil(result.data.main.temp),
-              city: result.data.name
-            });
+    axios.get(api)
+        .then(function (result) {
 
-            var newCity = {
-                temp: self.state.temp,
-                city: self.state.city,
-                id: Date.now()
-            };
+              self.setState({
+                temp: Math.ceil(result.data.main.temp),
+                city: result.data.name
+              });
 
-            self.props.onCityAdd(newCity);
-            self.setState({ temp: '' });
+              var newCity = {
+                  temp: self.state.temp,
+                  city: self.state.city,
+                  id: Date.now()
+              };
 
-      });
+              self.props.onCityAdd(newCity);
+              self.setState({ temp: '' });
+
+              formBlock.style.border = "none";
+              errorBlock.style.display = "none";
+
+        })
+        .catch(function (error) {
+            formBlock.style.border = "2px solid #d26161";
+            errorBlock.style.display = "block";
+        });
+      
     
   },
 

@@ -10,7 +10,7 @@ var WeatherList = React.createClass({
 
         return (
             <div>
-                <p className="error">Error: Our value is not correct!</p>
+                <p className="error">Error: Your value is not correct!</p>
                 
                 <div className="cities-list">
                     {

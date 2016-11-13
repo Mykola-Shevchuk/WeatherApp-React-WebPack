@@ -1,0 +1,27 @@
+{
+  "name": "react-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devserver": "webpack-dev-server --inline --content-base public --debug --hot --devtool --eval-source-map --output-pathinfo --watch --colors --port 8090 --host 0.0.0.0"
+  },
+  "author": "Mykola Shevchuk",
+  "license": "ISC",
+  "dependencies": {
+    "react": "15.3.2",
+    "react-dom": "15.3.2"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "*",
+    "babel": "5.x",
+    "babel-loader": "5.*",
+    "css-loader": "^0.22.0",
+    "react-hot-loader": "*",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}

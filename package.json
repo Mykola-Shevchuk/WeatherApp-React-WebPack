@@ -14,7 +14,6 @@
     "react-dom": "15.3.2"
   },
   "devDependencies": {
-    "autoprefixer-loader": "*",
     "babel": "5.x",
     "babel-loader": "5.*",
     "css-loader": "^0.22.0",
